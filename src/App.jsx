@@ -10,9 +10,10 @@ export function App() {
       <Header />
       <Main>
         <Title text="Labas rytas, Lietuva" desc="" />
-        <div>YGR</div>
+        <div>🟡🟢🔴</div>
 
         <Calc a={7} b={5} />
+        <Calc a={70} b={-50} />
         <Calc a={76} b={85} />
 
         <Title text="Apie mus" desc="aa" />
