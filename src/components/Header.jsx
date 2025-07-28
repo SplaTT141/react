@@ -12,7 +12,7 @@ export function Header() {
                 </div>
                 <ul className="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 nav-pills">
                     <li><NavLink className="nav-link px-2" to='/'>Home</NavLink></li>
-                    <li><NavLink className="nav-link px-2" to='/about'>About</NavLink></li>
+                    <li><NavLink className="nav-link px-2" to='/about'>Cookies</NavLink></li>
                     <li><NavLink className="nav-link px-2" to='/services'>Services</NavLink></li>
                 </ul>
                 <ul className="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 nav-pills">
