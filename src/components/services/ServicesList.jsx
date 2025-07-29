@@ -1,4 +1,13 @@
 export function ServicesList({ services }) {
+    if (services.length === 0) {
+        return (
+        <div>
+            <h1 className="display-1">My services</h1>
+            <p className="fs-3">Empty list 🏴</p>
+        </div>
+        )
+    }
+    
     return (
         <div>
             <h1 className="display-1">My services</h1>
