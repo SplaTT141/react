@@ -13,6 +13,7 @@ import { Register } from './pages/Register.jsx';
 import { Error404 } from './pages/Error404.jsx';
 import { ServiceInner } from './pages/ServiceInner.jsx';
 import { PublicTemplate } from './templates/PublicTemplate.jsx';
+import { Todo } from './pages/Todo.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -25,6 +26,7 @@ createRoot(document.getElementById('root')).render(
           <Route path='/services/:service' element={<ServiceInner />} />
           <Route path='/register' element={<Register />} />
           <Route path='/login' element={<Login />} />
+          <Route path='/todo' element={<Todo />} />
           <Route path='*' element={<Error404 />} />
         </Route>
       </Routes>
