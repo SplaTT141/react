@@ -2,6 +2,8 @@ import { useState } from "react";
 import { ServicesList } from "../components/services/ServicesList";
 
 export function Services() {
+    const [vegetablesId, setVegetablesId] = useState(1);
+    const [vegetablesList, setVegetablesList] = useState([]);
     const [text, setText] = useState('');
 
     const [id, setId] = useState(5);
@@ -20,10 +22,15 @@ export function Services() {
         setId(n => n + 1);
     }
 
+    function handleInputChange(e) {
+        setText(e.target.value);
+    }
+
     function handleFormSubmit(e) {
         e.preventDefault();
-
-
+        setVegetablesList(veges => [...veges, { id: vegetablesId, value: text}]);
+        setVegetablesId(id => id + 1);
+        setText('');
     }
 
     return (
@@ -32,15 +39,18 @@ export function Services() {
                 <div className="row">
                     <div className="col-12 col-lg-6 mb-5">
                         <form onSubmit={handleFormSubmit} className="d-flex flex-column gap-3 form">
-                            <label className="form-label" htmlFor="text">Message</label>
-                            <input value={text} className="form-control" id="text" type="text" />
+                            <label className="form-label" htmlFor="text">New vegetable name</label>
+                            <input onChange={handleInputChange} value={text} className="form-control" id="text" type="text" />
                             <button className="btn btn-primary" type="submit">Add</button>
                         </form>
-                        <ServicesList services={[]} />
+                        <ServicesList title='Darzoves' services={vegetablesList} />
+                    </div>
+                    <div className="col-12 mb-5">
+                        <hr />
                     </div>
                     <div className="col-12 col-lg-6">
                         <button onClick={handleClick} className="btn btn-primary">Prideti nauja paslauga</button>
-                        <ServicesList services={list} />
+                        <ServicesList title='My services' services={list} />
                     </div>
                 </div>
             </div>
