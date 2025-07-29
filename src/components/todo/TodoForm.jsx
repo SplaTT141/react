@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export function TodoForm({ addTask }) {
+export function TodoForm({ addTaskFunc }) {
     const [text, setText] = useState('');
 
     function handleTextChange(e) {
@@ -9,7 +9,8 @@ export function TodoForm({ addTask }) {
 
     function handleFormSubmit(e) {
         e.preventDefault();
-        addTask(text);
+        addTaskFunc(text);
+        setText('');
     }
 
     return (
